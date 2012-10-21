@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: obox
-Tags: instagram, photos, albums, instagrammers
+Tags: instagram, photos, albums, instagrammers, easygram, obox, photography, automatic, import, integration
 Requires at least: 3.3
 Tested up to: 3.4.1
 Stable tag: 1.0.0
