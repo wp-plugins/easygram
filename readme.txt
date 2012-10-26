@@ -68,6 +68,8 @@ Nope, it works on any type of WordPress install.
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Easygram launched.
 
+= 1.0.1 =
+* Added compatability checker to the theme activation so that users can make sure that the plugin works with their install before trying to attach images and failing.

@@ -185,7 +185,7 @@
 	    return wp_iframe(array(&$this, 'media_form'));
 	}
 	
-	// This function fetches the src of images for us
+	// This function breaks down tag attributs for us
 	function extract_html_tags($html_content, $tag_name, $allowed_protocols=array()) {
 		// Default list of protocols copied from wp-includes/kses.php:wp_kses()
 		if (empty($allowed_protocols))
@@ -210,7 +210,13 @@
 				}
 			return $tag_list;
 		}
-	
+		
+	// Get the image src using the extract_html_tags function, return just the image src
+	function get_image_src($html_content = ''){
+	    $new_tag_data = $this->extract_html_tags($html_content, 'img');
+	    $src = $new_tag_data[0]['attributes']['src'];
+	    return $src;
+	}
 	// Let's get the attachment ID by using the file url.
 	function get_attachment_id_from_url($url) {
     	global $wpdb;
@@ -241,9 +247,8 @@
 		endif;
 		
 	    // Extract the image URL to get the attachment ID
-	    $new_tag_data = $this->extract_html_tags($new_tag, 'img');
-	    $new_tag_url = $new_tag_data[0]['attributes']['src'];
-
+	    $new_tag_url = $this->get_image_src($new_tag);
+	    
 	    // Get the attachment ID from the uploaded image URL
 	    $attachment_id = $this->get_attachment_id_from_url($new_tag_url);
 

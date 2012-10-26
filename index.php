@@ -5,7 +5,7 @@
    	Description: Import your Instagram content into your WordPress site!
 	Author: Obox Design
 	Tags: instagram, photography, galleries, obox, easygram
-	Version: 1.0.0
+	Version: 1.0.1
 	Author URI: http://www.obox-design.com
 */
 
@@ -16,6 +16,7 @@ define("EGDIR", ABSPATH."wp-content/plugins/easygram/");
 
 if(!function_exists('eg_includes')) :
 	function eg_includes(){
+		global $egclass;
 		include_once ("functions/load-includes.php");
 		$egclass = new egclass();
 		$egclass->initiate();	
@@ -29,8 +30,9 @@ if ( isset($content_func) &&  ( (is_array( $content_func ) && ! empty( $content_
 
 if(!function_exists('eg_admin')) :
 	function eg_admin(){
-		$settings = new eg_settings();
-		$settings->init();
+		global $eg_settings;
+		$eg_settings = new eg_settings();
+		$eg_settings->init();
 	}
 	add_action('plugins_loaded', 'eg_admin');
 endif;
