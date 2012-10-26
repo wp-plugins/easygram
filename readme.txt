@@ -3,7 +3,7 @@ Contributors: obox
 Tags: instagram, photos, albums, instagrammers, easygram, obox, photography, automatic, import, integration
 Requires at least: 3.3
 Tested up to: 3.4.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,8 +68,9 @@ Nope, it works on any type of WordPress install.
 
 == Changelog ==
 
+= 1.0.1 =
+* Added compatability checker to the theme activation so that users can make sure that the plugin works with their install before trying to attach images and failing.
+
 = 1.0.0 =
 * Easygram launched.
 
-= 1.0.1 =
-* Added compatability checker to the theme activation so that users can make sure that the plugin works with their install before trying to attach images and failing.
